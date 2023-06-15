@@ -41,7 +41,7 @@ public class FabricaDePersonajes
         numero=rdm(0,6);
         nuevo.Nombre=nombres[numero];
         nuevo.Apodo="apodo"+numero;
-        nuevo.FechaNac=new DateTime(rdm(1723, 2024), rdm(1, 31), rdm(1,13));
+        nuevo.FechaNac=new DateTime(rdm(1723, 2006), rdm(1, 31), rdm(1,13));
         nuevo.Edad = 2023 - nuevo.FechaNac.Year;
         nuevo.Destreza=rdm(1, 6);
         nuevo.Armadura=rdm(1,11);
@@ -56,5 +56,22 @@ public class FabricaDePersonajes
         int numero;
         numero = random.Next(min, max);
         return numero;
+    }
+}
+
+public class persojanesJson
+{
+    public void GuardarPersonaje(List<Personaje> lista, string nombre){
+
+    }
+    public List<Personaje> LeerPersonaje(string archivo){
+        List<Personaje> lista = new List<Personaje>();
+        return lista;
+    }
+
+    public bool Existe(string archivo){
+        bool respuesta;
+
+        return respuesta;
     }
 }

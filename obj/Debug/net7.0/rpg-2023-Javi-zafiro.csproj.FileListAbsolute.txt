@@ -1,0 +1,15 @@
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\bin\Debug\net7.0\rpg-2023-Javi-zafiro.exe
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\bin\Debug\net7.0\rpg-2023-Javi-zafiro.deps.json
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\bin\Debug\net7.0\rpg-2023-Javi-zafiro.runtimeconfig.json
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\bin\Debug\net7.0\rpg-2023-Javi-zafiro.dll
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\bin\Debug\net7.0\rpg-2023-Javi-zafiro.pdb
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\obj\Debug\net7.0\rpg-2023-Javi-zafiro.csproj.AssemblyReference.cache
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\obj\Debug\net7.0\rpg-2023-Javi-zafiro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\obj\Debug\net7.0\rpg-2023-Javi-zafiro.AssemblyInfoInputs.cache
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\obj\Debug\net7.0\rpg-2023-Javi-zafiro.AssemblyInfo.cs
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\obj\Debug\net7.0\rpg-2023-Javi-zafiro.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\obj\Debug\net7.0\rpg-2023-Javi-zafiro.dll
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\obj\Debug\net7.0\refint\rpg-2023-Javi-zafiro.dll
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\obj\Debug\net7.0\rpg-2023-Javi-zafiro.pdb
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\obj\Debug\net7.0\rpg-2023-Javi-zafiro.genruntimeconfig.cache
+C:\Users\Alumno\Documents\tp7\rpg-2023-Javi-zafiro\obj\Debug\net7.0\ref\rpg-2023-Javi-zafiro.dll
