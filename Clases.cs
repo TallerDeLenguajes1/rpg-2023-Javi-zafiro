@@ -1,5 +1,5 @@
 namespace Clases;
-
+using System.Text.Json;
 public class Personaje
 {
     private string? tipo;
@@ -41,7 +41,7 @@ public class FabricaDePersonajes
         numero=rdm(0,6);
         nuevo.Nombre=nombres[numero];
         nuevo.Apodo="apodo"+numero;
-        nuevo.FechaNac=new DateTime(rdm(1723, 2006), rdm(1, 31), rdm(1,13));
+        nuevo.FechaNac=new DateTime(rdm(1723, 2006), rdm(1, 12), rdm(1,31));
         nuevo.Edad = 2023 - nuevo.FechaNac.Year;
         nuevo.Destreza=rdm(1, 6);
         nuevo.Armadura=rdm(1,11);
@@ -62,16 +62,27 @@ public class FabricaDePersonajes
 public class persojanesJson
 {
     public void GuardarPersonaje(List<Personaje> lista, string nombre){
-
+        string json=JsonSerializer.Serialize(lista, new JsonSerializerOptions{WriteIndented=true});
+        File.WriteAllText( "C:\\Users\\Javier\\Documents\\2023\\Taller\\"+nombre,json);
+        Console.WriteLine("se guardo la lista de personajes");
     }
     public List<Personaje> LeerPersonaje(string archivo){
-        List<Personaje> lista = new List<Personaje>();
-        return lista;
+        
+        string json = File.ReadAllText(archivo);
+        List<Personaje> lista = JsonSerializer.Deserialize<List<Personaje>>(json);
+        if (lista!=null)
+        {
+            return lista;
+        }else
+        {
+            Console.WriteLine("el archivo esta vacio");
+            return null;
+        }
+        
     }
 
     public bool Existe(string archivo){
-        bool respuesta;
-
-        return respuesta;
+        
+        return File.Exists(archivo);
     }
 }

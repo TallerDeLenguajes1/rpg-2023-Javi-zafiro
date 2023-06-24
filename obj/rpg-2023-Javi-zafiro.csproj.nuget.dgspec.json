@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alumno\\Documents\\tp7\\rpg-2023-Javi-zafiro\\rpg-2023-Javi-zafiro.csproj": {}
+    "C:\\Users\\Javier\\Documents\\2023\\Taller\\Repositorios\\rpg-2023-Javi-zafiro\\rpg-2023-Javi-zafiro.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alumno\\Documents\\tp7\\rpg-2023-Javi-zafiro\\rpg-2023-Javi-zafiro.csproj": {
+    "C:\\Users\\Javier\\Documents\\2023\\Taller\\Repositorios\\rpg-2023-Javi-zafiro\\rpg-2023-Javi-zafiro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alumno\\Documents\\tp7\\rpg-2023-Javi-zafiro\\rpg-2023-Javi-zafiro.csproj",
+        "projectUniqueName": "C:\\Users\\Javier\\Documents\\2023\\Taller\\Repositorios\\rpg-2023-Javi-zafiro\\rpg-2023-Javi-zafiro.csproj",
         "projectName": "rpg-2023-Javi-zafiro",
-        "projectPath": "C:\\Users\\Alumno\\Documents\\tp7\\rpg-2023-Javi-zafiro\\rpg-2023-Javi-zafiro.csproj",
-        "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alumno\\Documents\\tp7\\rpg-2023-Javi-zafiro\\obj\\",
+        "projectPath": "C:\\Users\\Javier\\Documents\\2023\\Taller\\Repositorios\\rpg-2023-Javi-zafiro\\rpg-2023-Javi-zafiro.csproj",
+        "packagesPath": "C:\\Users\\Javier\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Javier\\Documents\\2023\\Taller\\Repositorios\\rpg-2023-Javi-zafiro\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Javier\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
