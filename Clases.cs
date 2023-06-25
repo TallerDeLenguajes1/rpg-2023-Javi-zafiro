@@ -62,13 +62,16 @@ public class FabricaDePersonajes
 public class persojanesJson
 {
     public void GuardarPersonaje(List<Personaje> lista, string nombre){
+        string rutaProyecto = Directory.GetCurrentDirectory();
+        string rutaArchivo = Path.Combine(rutaProyecto, nombre);
         string json=JsonSerializer.Serialize(lista, new JsonSerializerOptions{WriteIndented=true});
-        File.WriteAllText( "C:\\Users\\Javier\\Documents\\2023\\Taller\\"+nombre,json);
+        File.WriteAllText( rutaArchivo,json);
         Console.WriteLine("se guardo la lista de personajes");
     }
     public List<Personaje> LeerPersonaje(string archivo){
-        
-        string json = File.ReadAllText(archivo);
+        string rutaProyecto = Directory.GetCurrentDirectory();
+        string rutaArchivo = Path.Combine(rutaProyecto, archivo);
+        string json = File.ReadAllText(rutaArchivo);
         List<Personaje> lista = JsonSerializer.Deserialize<List<Personaje>>(json);
         if (lista!=null)
         {
@@ -82,7 +85,8 @@ public class persojanesJson
     }
 
     public bool Existe(string archivo){
-        
-        return File.Exists(archivo);
+        string rutaProyecto = Directory.GetCurrentDirectory();
+        string rutaArchivo = Path.Combine(rutaProyecto, archivo);
+        return File.Exists(rutaArchivo);
     }
 }
