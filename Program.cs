@@ -5,8 +5,11 @@ using System.IO;
 using System.Net;
 using System.Text.Json;
 string? archivo = "Json";
+string? archivo2 = "Contrincantes";
 bool bandera;
 string? caracter="a";
+Personaje principal=null;
+
 Console.Clear();
 
 Console.WriteLine("|''||''|                                                                 '||'  '|'          ||    .   '||       ||                   ");
@@ -19,7 +22,25 @@ batalla.EscribirMensajePorLetras("Presione enter para continuar", TimeSpan.FromM
 Console.ReadKey();
 Console.Clear();
 
-batalla.EscribirMensajePorLetras("desea crear un nuevo personaje(aleatorio)? (Y/N)", TimeSpan.FromMilliseconds(30));
+batalla.EscribirMensajePorLetras("BIENVENIDO COMBATIENTE", TimeSpan.FromMilliseconds(30));
+batalla.EscribirMensajePorLetras("En este torneo te enfrentaras con los campeones de cada orden de Caballeros Radientes", TimeSpan.FromMilliseconds(30));
+batalla.EscribirMensajePorLetras("En cada nivel te enfrentaras con el campeon de una orden distinta", TimeSpan.FromMilliseconds(30));
+batalla.EscribirMensajePorLetras("Si lo derrotas avanzas de nivel, si el te derrota seras eliminado del torneo", TimeSpan.FromMilliseconds(30));
+batalla.EscribirMensajePorLetras("Vence a los 10 campeones, lleva la gloria a tu orden y coronate como El Campeon de Urithiru", TimeSpan.FromMilliseconds(30));
+batalla.EscribirMensajePorLetras("Vamos Muchach@, di las palabras", TimeSpan.FromMilliseconds(30));
+Console.ReadKey();
+Console.Clear();
+batalla.EscribirMensajePorLetras("Viaje antes que destino", TimeSpan.FromMilliseconds(30));
+Thread.Sleep(50);
+batalla.EscribirMensajePorLetras("Fuerza antes que debilidad", TimeSpan.FromMilliseconds(30));
+Thread.Sleep(50);
+batalla.EscribirMensajePorLetras("Vida antes que muerte", TimeSpan.FromMilliseconds(30));
+Console.ReadKey();
+batalla.EscribirMensajePorLetras("desea crear un personaje nuevo?", TimeSpan.FromMilliseconds(30));
+batalla.EscribirMensajePorLetras("Tenga en cuenta lo siguiente:", TimeSpan.FromMilliseconds(30));
+batalla.EscribirMensajePorLetras("-El personaje sera creado de manera aleatoria y este sera con el que jugara", TimeSpan.FromMilliseconds(30));
+batalla.EscribirMensajePorLetras("-Si no desea crear uno nuevo se le asignara uno aleatorio", TimeSpan.FromMilliseconds(30));
+batalla.EscribirMensajePorLetras("desea crear un personaje nuevo? (Y/N)", TimeSpan.FromMilliseconds(30));
 do
 {
     caracter=Console.ReadLine();
@@ -32,6 +53,7 @@ do
 
 if (caracter=="y" || caracter=="Y")
 {
+    
     string nombre;
     DateTime fec;
     int edad;
@@ -68,6 +90,7 @@ if (caracter=="y" || caracter=="Y")
                     batalla.EscribirMensajePorLetras("Apodo: "+nuevo.Apodo, TimeSpan.FromMilliseconds(30));
                     batalla.EscribirMensajePorLetras("Tipo: "+nuevo.Tipo, TimeSpan.FromMilliseconds(30));
                     batalla.EscribirMensajePorLetras("Nivel: "+nuevo.Nivel, TimeSpan.FromMilliseconds(30));
+                    principal=nuevo;
                     Console.ReadKey();
                 }
             }
@@ -77,27 +100,7 @@ if (caracter=="y" || caracter=="Y")
     {
         Console.WriteLine("Problemas de acceso a la API");
     }
-    Console.Clear();
-    batalla.EscribirMensajePorLetras("Desea juagar con el personaje creado? (Y/N)", TimeSpan.FromMilliseconds(30));
-    batalla.EscribirMensajePorLetras("Tenga en cuenta lo siguiente:", TimeSpan.FromMilliseconds(30));
-    batalla.EscribirMensajePorLetras("- Su contrincante sera seleccionado de manera aleatoria", TimeSpan.FromMilliseconds(30));
-    batalla.EscribirMensajePorLetras("- Si no desea jugar con el personaje que se creo, su personaje sera elegido aleatoriamente", TimeSpan.FromMilliseconds(30));
-    do
-    {
-        caracter=Console.ReadLine();
-        if (caracter!="y" && caracter!="Y" && caracter!="n" && caracter!="N")
-        {
-            batalla.EscribirMensajePorLetras("el caracter ingresado es incorrecto, intentelo de nuevo", TimeSpan.FromMilliseconds(30));
-            
-        }
-    } while (caracter!="y" && caracter!="Y" && caracter!="n" && caracter!="N");
-    if (caracter=="y" || caracter=="Y")
-    {
-        bandera=true;
-    }else
-    {
-        bandera=false;
-    }
+    
 }else
 {
     Console.Clear();
@@ -108,39 +111,36 @@ if (caracter=="y" || caracter=="Y")
 
 
 
-List<Personaje> listaObtenida = new List<Personaje>();
-
-bool existe = persojanesJson.Existe(archivo);
-if (existe)
+List<Personaje> listaContrincantes = new List<Personaje>();
+List<Personaje> listaPersonajes = new List<Personaje>();
+if (persojanesJson.Existe(archivo2) && persojanesJson.Existe(archivo))
 {
-    listaObtenida=persojanesJson.LeerPersonaje(archivo);
-    Personaje principal;
-    int n=listaObtenida.Count;
+    listaContrincantes=persojanesJson.LeerPersonaje(archivo2);
+    listaPersonajes=persojanesJson.LeerPersonaje(archivo);
     int x;
+    double salud;
     int y;
     int i=1;
     bool cambio=true;
     double daño;
-    if (bandera)
+    if (principal!=null)
     {
-        x=n-1;
-    }else
-    {
-        x=batalla.rdm(0, n);
+        x=batalla.rdm(0, listaPersonajes.Count);
+        principal=listaPersonajes[x];
     }
-    principal=listaObtenida[x];
-    listaObtenida.Remove(principal);
+    
     do
     {
-        y=batalla.rdm(0,n);
-        while (y==x)
+        salud=principal.Salud;
+        y=batalla.rdm(0,listaContrincantes.Count);
+        while (listaContrincantes[y].Nivel!=principal.Nivel)
         {
-            y=batalla.rdm(0, n);
+            y=batalla.rdm(0, listaContrincantes.Count);
         }
-        Personaje secundario= listaObtenida[y];
-        listaObtenida.Remove(secundario);
+        Personaje secundario= listaContrincantes[y];
+        listaContrincantes.Remove(secundario);
         
-        
+        Console.Clear();
         Console.WriteLine("Comencemos el "+i+"° combate");
         Console.WriteLine("El primer combatiente: ");
         Console.WriteLine("Nombre: "+ principal.Nombre);
@@ -183,17 +183,77 @@ if (existe)
             }
             Console.WriteLine("...enter para continuar...");
             Console.ReadLine();
-        } while (principal.Salud>0 && secundario.Salud>0 && listaObtenida.Count>0); 
+        } while (principal.Salud>0 && secundario.Salud>0 && listaContrincantes.Count>0); 
         i++;
         if (principal.Salud>0)
         {
-            principal.Salud=100;
+            principal.Salud=salud;
             if (principal.Nivel<10)
             {
                 principal.Nivel++;
+                batalla.EscribirMensajePorLetras("Felicidades! como venciste a tu oponente subiste un nivel", TimeSpan.FromMilliseconds(30));
+                int j=batalla.rdm(1,10);
+                switch (j)
+                {
+                    case 1:
+                    if (principal.Fuerza<10)
+                    {
+                        principal.Fuerza++;
+                        batalla.EscribirMensajePorLetras("Y como recompenzas subes un punto en tu nivel de Fuerza", TimeSpan.FromMilliseconds(30));
+                    }else
+                    {
+                        batalla.EscribirMensajePorLetras("Wow, ya tienes tu nivel de Fuerza al maximo, no puedes subir mas niveles", TimeSpan.FromMilliseconds(30));
+                        batalla.EscribirMensajePorLetras("Ganaste un bonificacion de 5 puntos extra de vida", TimeSpan.FromMilliseconds(30));
+                        principal.Salud+=5;
+                    }
+                    break;
+                    case 3:
+                    if (principal.Velocidad<10)
+                    {
+                        principal.Velocidad++;
+                        batalla.EscribirMensajePorLetras("Y como recompenzas subes un punto en tu nivel de Velocidad", TimeSpan.FromMilliseconds(30));
+                    }else
+                    {
+                        batalla.EscribirMensajePorLetras("Wow, ya tienes tu nivel de Velocidad al maximo, no puedes subir mas niveles", TimeSpan.FromMilliseconds(30));
+                        batalla.EscribirMensajePorLetras("Ganaste un bonificacion de 5 puntos extra de vida", TimeSpan.FromMilliseconds(30));
+                        principal.Salud+=5;
+                    }
+                    break;
+                    case 2:
+                    if (principal.Destreza<5)
+                    {
+                        principal.Destreza++;
+                        batalla.EscribirMensajePorLetras("Y como recompenzas subes un punto en tu nivel de Destreza", TimeSpan.FromMilliseconds(30));
+                    }else
+                    {
+                        batalla.EscribirMensajePorLetras("Wow, ya tienes tu nivel de Destreza al maximo, no puedes subir mas niveles", TimeSpan.FromMilliseconds(30));
+                        batalla.EscribirMensajePorLetras("Ganaste un bonificacion de 5 puntos extra de vida", TimeSpan.FromMilliseconds(30));
+                        principal.Salud+=5;
+                    }
+                    break;
+                    case 7:
+                    case 4:
+                    if (principal.Armadura<10)
+                    {
+                        principal.Armadura++;
+                        batalla.EscribirMensajePorLetras("Y como recompenzas subes un punto en tu nivel de Armadura", TimeSpan.FromMilliseconds(30));
+                    }else
+                    {
+                        batalla.EscribirMensajePorLetras("Wow, ya tienes tu nivel de Armadura al maximo, no puedes subir mas niveles", TimeSpan.FromMilliseconds(30));
+                        batalla.EscribirMensajePorLetras("Ganaste un bonificacion de 5 puntos extra de vida", TimeSpan.FromMilliseconds(30));
+                        principal.Salud+=5;
+                    }
+                    break;
+                    default:
+                    batalla.EscribirMensajePorLetras("Ganaste un bonificacion de 5 puntos extra de vida", TimeSpan.FromMilliseconds(30));
+                    principal.Salud+=5;
+                    break;
+                }
+                Console.ReadKey();
+                Console.Clear();
             }
         }
-    } while (principal.Salud>0 && i<n);
+    } while (principal.Salud>0 && listaContrincantes.Count>0);
 }else
 {
     Console.Write("el archivo no existe");

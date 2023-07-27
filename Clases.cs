@@ -39,7 +39,7 @@ public static class FabricaDePersonajes
         
         Personaje nuevo=new Personaje();
         int numero;
-        numero=rdm(0,6);
+        numero=rdm(0,10);
         nuevo.Tipo=tipos[numero];
         nuevo.Nombre=nombre;
         nuevo.Apodo=apodo;
@@ -47,7 +47,7 @@ public static class FabricaDePersonajes
         nuevo.Edad = edad;
         switch (nuevo.Tipo)
         {
-            case "Dazante del filo":
+            case "Danzante del filo":
                 nuevo.Destreza=5;
                 nuevo.Armadura=5;
                 nuevo.Velocidad=8;
@@ -93,7 +93,7 @@ public static class FabricaDePersonajes
                 nuevo.Destreza=4;
                 nuevo.Armadura=2;
                 nuevo.Velocidad=6;
-                nuevo.Fuerza=4;
+                nuevo.Fuerza=6;
             break;
             case "Custodio de piedra":
                 nuevo.Destreza=4;
@@ -110,7 +110,7 @@ public static class FabricaDePersonajes
             default:
             break;
         }
-        nuevo.Nivel=rdm(1,6);
+        nuevo.Nivel=1;
         nuevo.Salud=100;
         return nuevo;
     }
