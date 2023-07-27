@@ -37,5 +37,18 @@
     "Nivel": 1,
     "Armadura": 6,
     "Salud": 100
+  },
+  {
+    "Tipo": "Tejedor de luz",
+    "Nombre": "Wyatt",
+    "Apodo": "angryostrich336",
+    "FechaNac": "1965-11-06T05:21:44.57Z",
+    "Edad": 57,
+    "Destreza": 4,
+    "Fuerza": 6,
+    "Velocidad": 6,
+    "Nivel": 1,
+    "Armadura": 2,
+    "Salud": 100
   }
 ]

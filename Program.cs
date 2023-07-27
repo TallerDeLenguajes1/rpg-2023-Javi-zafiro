@@ -123,7 +123,7 @@ if (persojanesJson.Existe(archivo2) && persojanesJson.Existe(archivo))
     int i=1;
     bool cambio=true;
     double daño;
-    if (principal!=null)
+    if (principal==null)
     {
         x=batalla.rdm(0, listaPersonajes.Count);
         principal=listaPersonajes[x];
