@@ -63,5 +63,18 @@
     "Nivel": 5,
     "Armadura": 6,
     "Salud": 100
+  },
+  {
+    "Tipo": "Escultor de voluntad",
+    "Nombre": "Julia",
+    "Apodo": "lazylion303",
+    "FechaNac": "1996-07-06T04:51:02.156Z",
+    "Edad": 27,
+    "Destreza": 2,
+    "Fuerza": 5,
+    "Velocidad": 2,
+    "Nivel": 5,
+    "Armadura": 10,
+    "Salud": 100
   }
 ]

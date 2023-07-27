@@ -114,6 +114,7 @@ bool existe = persojanesJson.Existe(archivo);
 if (existe)
 {
     listaObtenida=persojanesJson.LeerPersonaje(archivo);
+    Personaje principal;
     int n=listaObtenida.Count;
     int x;
     int y;
@@ -127,6 +128,8 @@ if (existe)
     {
         x=batalla.rdm(0, n);
     }
+    principal=listaObtenida[x];
+    listaObtenida.Remove(principal);
     do
     {
         y=batalla.rdm(0,n);
@@ -134,60 +137,63 @@ if (existe)
         {
             y=batalla.rdm(0, n);
         }
-        
+        Personaje secundario= listaObtenida[y];
+        listaObtenida.Remove(secundario);
         
         
         Console.WriteLine("Comencemos el "+i+"° combate");
         Console.WriteLine("El primer combatiente: ");
-        Console.WriteLine("Nombre: "+ listaObtenida[x].Nombre);
-        Console.WriteLine("Apodo: "+ listaObtenida[x].Apodo);
-        Console.WriteLine("Nivel: "+ listaObtenida[x].Nivel);
-        Console.WriteLine("Tipo: "+ listaObtenida[x].Tipo);
+        Console.WriteLine("Nombre: "+ principal.Nombre);
+        Console.WriteLine("Apodo: "+ principal.Apodo);
+        Console.WriteLine("Nivel: "+ principal.Nivel);
+        Console.WriteLine("Tipo: "+ principal.Tipo);
+        Console.ReadKey();
         Console.WriteLine("El segundo combatiente: ");
-        Console.WriteLine("Nombre: "+ listaObtenida[y].Nombre);
-        Console.WriteLine("Apodo: "+ listaObtenida[y].Apodo);
-        Console.WriteLine("Nivel: "+ listaObtenida[y].Nivel);
-        Console.WriteLine("Tipo: "+ listaObtenida[y].Tipo);
+        Console.WriteLine("Nombre: "+ secundario.Nombre);
+        Console.WriteLine("Apodo: "+ secundario.Apodo);
+        Console.WriteLine("Nivel: "+ secundario.Nivel);
+        Console.WriteLine("Tipo: "+ secundario.Tipo);
+        Console.ReadKey();
         do
         {
             if (cambio)
             {
-                daño=batalla.combate(listaObtenida[x], listaObtenida[y]);
+                daño=batalla.combate(principal, secundario);
                 Console.WriteLine("daño causado por el primer combatiente: "+daño);
-                listaObtenida[y].Salud-=daño;
+                secundario.Salud-=daño;
                 cambio=false;
             }else
             {
-                daño=batalla.combate(listaObtenida[y], listaObtenida[x]);
+                daño=batalla.combate(secundario, principal);
                 Console.WriteLine("daño causado por el segundo combatiente: "+daño);
-                listaObtenida[x].Salud-=daño;
+                principal.Salud-=daño;
                 cambio=true;
             }
             
-            Console.WriteLine("salud del primer combatiente: "+listaObtenida[x].Salud);
-            Console.WriteLine("salud del segundo combatiente: "+listaObtenida[y].Salud);
+            Console.WriteLine("salud del primer combatiente: "+principal.Salud);
+            Console.WriteLine("salud del segundo combatiente: "+secundario.Salud);
             Console.WriteLine("==========fin de round==========");
-            if (listaObtenida[x].Salud<=0)
+            if (principal.Salud<=0)
             {
                 Console.WriteLine("FUISTE VENCIDO");
             }
-            if (listaObtenida[y].Salud<=0)
+            if (secundario.Salud<=0)
             {
                 Console.WriteLine("VENCISTE A TU CONTRINCATE");
             }
             Console.WriteLine("...enter para continuar...");
             Console.ReadLine();
-        } while (listaObtenida[x].Salud>0 && listaObtenida[y].Salud>0); 
+        } while (principal.Salud>0 && secundario.Salud>0 && listaObtenida.Count>0); 
         i++;
-        if (listaObtenida[x].Salud>0)
+        if (principal.Salud>0)
         {
-            listaObtenida[x].Salud=100;
-            if (listaObtenida[x].Nivel<10)
+            principal.Salud=100;
+            if (principal.Nivel<10)
             {
-                listaObtenida[x].Nivel++;
+                principal.Nivel++;
             }
         }
-    } while (listaObtenida[x].Salud>0 && i<n);
+    } while (principal.Salud>0 && i<n);
 }else
 {
     Console.Write("el archivo no existe");
