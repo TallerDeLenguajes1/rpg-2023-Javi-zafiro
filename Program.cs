@@ -168,7 +168,7 @@ if (caracter=="y" || caracter=="Y")
 
 List<Personaje> listaContrincantes = new List<Personaje>();
 List<Personaje> listaPersonajes = new List<Personaje>();
-if (persojanesJson.Existe(archivo2) && persojanesJson.Existe(archivo))
+if (persojanesJson.Existe(archivo2))
 {
     listaContrincantes=persojanesJson.LeerPersonaje(archivo2);
     listaPersonajes=persojanesJson.LeerPersonaje(archivo);
@@ -407,4 +407,5 @@ if (persojanesJson.Existe(archivo2) && persojanesJson.Existe(archivo))
 }else
 {
     Console.WriteLine("el archivo no existe");
+    Console.WriteLine("no se puede jugar");
 }

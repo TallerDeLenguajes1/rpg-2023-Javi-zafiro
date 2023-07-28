@@ -26,97 +26,6 @@
     "Salud": 100
   },
   {
-    "Tipo": "Nominador de lo otro",
-    "Nombre": "Gorana",
-    "Apodo": "bluebutterfly292",
-    "FechaNac": "1990-05-23T01:27:15.21Z",
-    "Edad": 33,
-    "Destreza": 5,
-    "Fuerza": 9,
-    "Velocidad": 6,
-    "Nivel": 1,
-    "Armadura": 6,
-    "Salud": 100
-  },
-  {
-    "Tipo": "Tejedor de luz",
-    "Nombre": "Wyatt",
-    "Apodo": "angryostrich336",
-    "FechaNac": "1965-11-06T05:21:44.57Z",
-    "Edad": 57,
-    "Destreza": 4,
-    "Fuerza": 6,
-    "Velocidad": 6,
-    "Nivel": 1,
-    "Armadura": 2,
-    "Salud": 100
-  },
-  {
-    "Tipo": "Escultor de voluntad",
-    "Nombre": "Evelia",
-    "Apodo": "beautifulleopard289",
-    "FechaNac": "1994-09-21T14:43:53.603Z",
-    "Edad": 28,
-    "Destreza": 2,
-    "Fuerza": 5,
-    "Velocidad": 2,
-    "Nivel": 1,
-    "Armadura": 10,
-    "Salud": 100
-  },
-  {
-    "Tipo": "Portador de polvo",
-    "Nombre": "Alfonso",
-    "Apodo": "organicrabbit889",
-    "FechaNac": "1981-12-13T01:14:19.965Z",
-    "Edad": 41,
-    "Destreza": 2,
-    "Fuerza": 9,
-    "Velocidad": 9,
-    "Nivel": 1,
-    "Armadura": 5,
-    "Salud": 100
-  },
-  {
-    "Tipo": "Danzante del filo",
-    "Nombre": "Miriam",
-    "Apodo": "organicswan126",
-    "FechaNac": "1946-08-29T17:37:31.146Z",
-    "Edad": 76,
-    "Destreza": 5,
-    "Fuerza": 4,
-    "Velocidad": 8,
-    "Nivel": 1,
-    "Armadura": 5,
-    "Salud": 100
-  },
-  {
-    "Tipo": "Portador de polvo",
-    "Nombre": "Esteban",
-    "Apodo": "orangeleopard250",
-    "FechaNac": "1990-08-14T20:50:46.213Z",
-    "Edad": 32,
-    "Destreza": 2,
-    "Fuerza": 9,
-    "Velocidad": 9,
-    "Nivel": 1,
-    "Armadura": 5,
-    "Salud": 100
-  },
-  {
-    "Tipo": "Escultor de voluntad",
-    "Nombre": "\u06A9\u06CC\u0645\u06CC\u0627",
-    "Apodo": "brownzebra814",
-    "FechaNac": "1999-07-26T21:48:08.685Z",
-    "Edad": 24,
-    "Destreza": 2,
-    "Fuerza": 5,
-    "Velocidad": 2,
-    "Nivel": 1,
-    "Armadura": 10,
-    "Salud": 100
-  },
-  {
     "Tipo": "Danzante del filo",
     "Nombre": "Morris",
     "Apodo": "heavyrabbit128",
@@ -166,6 +75,19 @@
     "Velocidad": 6,
     "Nivel": 1,
     "Armadura": 6,
+    "Salud": 100
+  },
+  {
+    "Tipo": "Custodio de piedra",
+    "Nombre": "Sofia",
+    "Apodo": "silverpeacock242",
+    "FechaNac": "1961-09-24T14:43:14.999Z",
+    "Edad": 61,
+    "Destreza": 4,
+    "Fuerza": 8,
+    "Velocidad": 5,
+    "Nivel": 1,
+    "Armadura": 10,
     "Salud": 100
   }
 ]
