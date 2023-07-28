@@ -6,46 +6,79 @@ using System.Net;
 using System.Text.Json;
 string? archivo = "Json";
 string? archivo2 = "Contrincantes";
-bool bandera;
 string? caracter="a";
 Personaje principal=null;
 
 Console.Clear();
-
+Console.ForegroundColor = ConsoleColor.Red;
 Console.WriteLine("|''||''|                                                                 '||'  '|'          ||    .   '||       ||                   ");
 Console.WriteLine("   ||      ...   ... ..  .. ...     ....    ...        ....  .. ...       ||    |  ... ..  ...  .||.   || ..   ...  ... ..  ... ...  ");
+Console.ForegroundColor = ConsoleColor.Magenta;
 Console.WriteLine("   ||    .|  '|.  ||' ''  ||  ||  .|...|| .|  '|.    .|...||  ||  ||      ||    |   ||' ''  ||   ||    ||' ||   ||   ||' ''  ||  ||  ");
+Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine("   ||    ||   ||  ||      ||  ||  ||      ||   ||    ||       ||  ||      ||    |   ||      ||   ||    ||  ||   ||   ||      ||  ||  ");
+Console.ForegroundColor = ConsoleColor.White;
 Console.WriteLine("  .||.    '|..|' .||.    .||. ||.  '|...'  '|..|'     '|...' .||. ||.      '|..'   .||.    .||.  '|.' .||. ||. .||. .||.     '|..'|. ");
 Console.WriteLine(" ");
+Console.SetCursorPosition(50, 10);
+Console.ForegroundColor = ConsoleColor.Red;
 batalla.EscribirMensajePorLetras("Presione enter para continuar", TimeSpan.FromMilliseconds(30));
+Console.ForegroundColor = ConsoleColor.White;
 Console.ReadKey();
 Console.Clear();
 
-batalla.EscribirMensajePorLetras("BIENVENIDO COMBATIENTE", TimeSpan.FromMilliseconds(30));
+Console.ForegroundColor = ConsoleColor.Red;
+Console.SetCursorPosition(51, 1);
+batalla.EscribirMensajePorLetras("BIENVENIDO RADIANTE", TimeSpan.FromMilliseconds(30));
+Console.ForegroundColor = ConsoleColor.DarkGray;
+Console.SetCursorPosition(19, 3);
 batalla.EscribirMensajePorLetras("En este torneo te enfrentaras con los campeones de cada orden de Caballeros Radientes", TimeSpan.FromMilliseconds(30));
+Console.SetCursorPosition(29, 4);
 batalla.EscribirMensajePorLetras("En cada nivel te enfrentaras con el campeon de una orden distinta", TimeSpan.FromMilliseconds(30));
+Console.SetCursorPosition(23, 5);
 batalla.EscribirMensajePorLetras("Si lo derrotas avanzas de nivel, si el te derrota seras eliminado del torneo", TimeSpan.FromMilliseconds(30));
+Console.SetCursorPosition(16, 6);
 batalla.EscribirMensajePorLetras("Vence a los 10 campeones, lleva la gloria a tu orden y coronate como El Campeon de Urithiru", TimeSpan.FromMilliseconds(30));
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.SetCursorPosition(45, 7);
 batalla.EscribirMensajePorLetras("Vamos Muchach@, di las palabras", TimeSpan.FromMilliseconds(30));
 Console.ReadKey();
 Console.Clear();
-batalla.EscribirMensajePorLetras("Viaje antes que destino", TimeSpan.FromMilliseconds(30));
+Console.ForegroundColor = ConsoleColor.Red;
+Console.SetCursorPosition(50, 3);
+batalla.EscribirMensajePorLetras("VIAJE ANTES QUE DESTINO", TimeSpan.FromMilliseconds(30));
 Thread.Sleep(50);
-batalla.EscribirMensajePorLetras("Fuerza antes que debilidad", TimeSpan.FromMilliseconds(30));
+Console.SetCursorPosition(49, 5);
+batalla.EscribirMensajePorLetras("FUERZA ANTES QUE DEBILIDAD", TimeSpan.FromMilliseconds(30));
 Thread.Sleep(50);
-batalla.EscribirMensajePorLetras("Vida antes que muerte", TimeSpan.FromMilliseconds(30));
+Console.SetCursorPosition(51, 7);
+batalla.EscribirMensajePorLetras("VIDA ANTES QUE MUERTE", TimeSpan.FromMilliseconds(30));
 Console.ReadKey();
-batalla.EscribirMensajePorLetras("desea crear un personaje nuevo?", TimeSpan.FromMilliseconds(30));
+Console.Clear();
+Console.ForegroundColor = ConsoleColor.Red;
+Console.SetCursorPosition(29, 2);
+Console.WriteLine("*******************************************************************************");
+Console.SetCursorPosition(29, 9);
+Console.WriteLine("*******************************************************************************");
+Console.ForegroundColor = ConsoleColor.White;
+Console.SetCursorPosition(53, 3);
+batalla.EscribirMensajePorLetras("Desea crear un personaje nuevo?", TimeSpan.FromMilliseconds(30));
+Console.SetCursorPosition(54, 4);
 batalla.EscribirMensajePorLetras("Tenga en cuenta lo siguiente:", TimeSpan.FromMilliseconds(30));
+Console.SetCursorPosition(31, 5);
 batalla.EscribirMensajePorLetras("-El personaje sera creado de manera aleatoria y este sera con el que jugara", TimeSpan.FromMilliseconds(30));
+Console.SetCursorPosition(31, 6);
 batalla.EscribirMensajePorLetras("-Si no desea crear uno nuevo se le asignara uno aleatorio", TimeSpan.FromMilliseconds(30));
-batalla.EscribirMensajePorLetras("desea crear un personaje nuevo? (Y/N)", TimeSpan.FromMilliseconds(30));
+Console.SetCursorPosition(50, 7);
+batalla.EscribirMensajePorLetras("Desea crear un personaje nuevo? (Y/N)", TimeSpan.FromMilliseconds(30));
+
 do
 {
+    Console.SetCursorPosition(70, 8);
     caracter=Console.ReadLine();
     if (caracter!="y" && caracter!="Y" && caracter!="n" && caracter!="N")
     {
+        Console.SetCursorPosition(1, 10);
         batalla.EscribirMensajePorLetras("el caracter ingresado es incorrecto, intentelo de nuevo", TimeSpan.FromMilliseconds(30));
         
     }
@@ -84,11 +117,23 @@ if (caracter=="y" || caracter=="Y")
                     agregar.Add(nuevo);
                     persojanesJson.GuardarPersonaje(agregar, archivo);
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.SetCursorPosition(29, 1);
+                    Console.WriteLine("***************************************************************");
+                    Console.SetCursorPosition(29, 8);
+                    Console.WriteLine("***************************************************************");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.SetCursorPosition(32, 2);
                     batalla.EscribirMensajePorLetras("El personaje fue creado! veamos sus datos", TimeSpan.FromMilliseconds(30));
+                    Console.SetCursorPosition(32, 3);
                     batalla.EscribirMensajePorLetras("Nombre: "+nuevo.Nombre, TimeSpan.FromMilliseconds(30));
+                    Console.SetCursorPosition(32, 4);
                     batalla.EscribirMensajePorLetras("Edad: "+nuevo.Edad, TimeSpan.FromMilliseconds(30));
+                    Console.SetCursorPosition(32, 5);
                     batalla.EscribirMensajePorLetras("Apodo: "+nuevo.Apodo, TimeSpan.FromMilliseconds(30));
+                    Console.SetCursorPosition(32, 6);
                     batalla.EscribirMensajePorLetras("Tipo: "+nuevo.Tipo, TimeSpan.FromMilliseconds(30));
+                    Console.SetCursorPosition(32, 7);
                     batalla.EscribirMensajePorLetras("Nivel: "+nuevo.Nivel, TimeSpan.FromMilliseconds(30));
                     principal=nuevo;
                     Console.ReadKey();
@@ -104,9 +149,9 @@ if (caracter=="y" || caracter=="Y")
 }else
 {
     Console.Clear();
+    Console.SetCursorPosition(30, 5);
     batalla.EscribirMensajePorLetras("Como no desea crear nuevos personajes usaremos los ya existentes", TimeSpan.FromMilliseconds(30));
     Console.ReadKey();
-    bandera=false;
 }
 
 

@@ -50,5 +50,44 @@
     "Nivel": 1,
     "Armadura": 2,
     "Salud": 100
+  },
+  {
+    "Tipo": "Escultor de voluntad",
+    "Nombre": "Evelia",
+    "Apodo": "beautifulleopard289",
+    "FechaNac": "1994-09-21T14:43:53.603Z",
+    "Edad": 28,
+    "Destreza": 2,
+    "Fuerza": 5,
+    "Velocidad": 2,
+    "Nivel": 1,
+    "Armadura": 10,
+    "Salud": 100
+  },
+  {
+    "Tipo": "Portador de polvo",
+    "Nombre": "Alfonso",
+    "Apodo": "organicrabbit889",
+    "FechaNac": "1981-12-13T01:14:19.965Z",
+    "Edad": 41,
+    "Destreza": 2,
+    "Fuerza": 9,
+    "Velocidad": 9,
+    "Nivel": 1,
+    "Armadura": 5,
+    "Salud": 100
+  },
+  {
+    "Tipo": "Danzante del filo",
+    "Nombre": "Miriam",
+    "Apodo": "organicswan126",
+    "FechaNac": "1946-08-29T17:37:31.146Z",
+    "Edad": 76,
+    "Destreza": 5,
+    "Fuerza": 4,
+    "Velocidad": 8,
+    "Nivel": 1,
+    "Armadura": 5,
+    "Salud": 100
   }
 ]
