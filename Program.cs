@@ -168,7 +168,7 @@ if (caracter=="y" || caracter=="Y")
 
 List<Personaje> listaContrincantes = new List<Personaje>();
 List<Personaje> listaPersonajes = new List<Personaje>();
-if (persojanesJson.Existe(archivo2))
+if (persojanesJson.Existe(archivo2) && persojanesJson.Existe(archivo))
 {
     listaContrincantes=persojanesJson.LeerPersonaje(archivo2);
     listaPersonajes=persojanesJson.LeerPersonaje(archivo);
