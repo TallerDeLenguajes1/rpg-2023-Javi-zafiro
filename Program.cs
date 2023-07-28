@@ -273,12 +273,16 @@ if (persojanesJson.Existe(archivo2) && persojanesJson.Existe(archivo))
             if (principal.Salud<=0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
+                Console.Clear();
+                Console.SetCursorPosition(33, 3);
                 Console.WriteLine("FUISTE VENCIDO");
                 bandera=false;
             }
             if (secundario.Salud<=0)
             {
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Green;
+                Console.SetCursorPosition(27, 3);
                 Console.WriteLine("VENCISTE A TU CONTRINCATE");
             }
             Console.SetCursorPosition(30, 6);
@@ -392,13 +396,10 @@ if (persojanesJson.Existe(archivo2) && persojanesJson.Existe(archivo))
         Console.WriteLine("|  _|   | | | | | |   | |_| | |  __/ | |   | |_| | | |_| | |  __/ | (_| | | (_) |");
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("|_|     |_| |_| |_|   |____/   \\___| |_|    \\___/   \\__,_|  \\___|  \\__, |  \\___/");
-        Console.WriteLine("                                                                      |___/ ");         
-   
-
- 
-  
+        Console.WriteLine("                                                                    |___/ ");         
                  
     }
+    Console.ReadKey();
 }else
 {
     Console.WriteLine("el archivo no existe");

@@ -128,5 +128,31 @@
     "Nivel": 1,
     "Armadura": 5,
     "Salud": 100
+  },
+  {
+    "Tipo": "Vigilante de la verdad",
+    "Nombre": "Liliana",
+    "Apodo": "silvermeercat963",
+    "FechaNac": "2000-03-25T07:15:23.161Z",
+    "Edad": 23,
+    "Destreza": 3,
+    "Fuerza": 3,
+    "Velocidad": 7,
+    "Nivel": 1,
+    "Armadura": 8,
+    "Salud": 100
+  },
+  {
+    "Tipo": "Vigilante de la verdad",
+    "Nombre": "Gerhild",
+    "Apodo": "organicsnake346",
+    "FechaNac": "1981-10-15T12:03:04.976Z",
+    "Edad": 41,
+    "Destreza": 3,
+    "Fuerza": 3,
+    "Velocidad": 7,
+    "Nivel": 1,
+    "Armadura": 8,
+    "Salud": 100
   }
 ]
