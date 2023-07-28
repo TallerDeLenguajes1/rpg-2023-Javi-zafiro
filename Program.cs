@@ -66,30 +66,31 @@ Console.ReadKey();
 Console.Clear();
 Console.ForegroundColor = ConsoleColor.Red;
 Console.SetCursorPosition(29, 2);
-Console.WriteLine("*******************************************************************************");
+Console.WriteLine("********************************************************************************");
 Console.SetCursorPosition(29, 9);
-Console.WriteLine("*******************************************************************************");
+Console.WriteLine("********************************************************************************");
 Console.ForegroundColor = ConsoleColor.White;
 Console.SetCursorPosition(53, 3);
 batalla.EscribirMensajePorLetras("Desea crear un personaje nuevo?", TimeSpan.FromMilliseconds(30));
 Console.SetCursorPosition(54, 4);
 batalla.EscribirMensajePorLetras("Tenga en cuenta lo siguiente:", TimeSpan.FromMilliseconds(30));
 Console.SetCursorPosition(31, 5);
-batalla.EscribirMensajePorLetras("-El personaje sera creado de manera aleatoria y este sera con el que jugara", TimeSpan.FromMilliseconds(30));
+batalla.EscribirMensajePorLetras("-El personaje sera creado de manera aleatoria y este sera con el que jugaras", TimeSpan.FromMilliseconds(30));
 Console.SetCursorPosition(31, 6);
 batalla.EscribirMensajePorLetras("-Si no desea crear uno nuevo se le asignara uno aleatorio", TimeSpan.FromMilliseconds(30));
 Console.SetCursorPosition(50, 7);
 batalla.EscribirMensajePorLetras("Desea crear un personaje nuevo? (Y/N)", TimeSpan.FromMilliseconds(30));
-
+Console.SetCursorPosition(70, 8);
 do
 {
-    Console.SetCursorPosition(70, 8);
     caracter=Console.ReadLine();
     if (caracter!="y" && caracter!="Y" && caracter!="n" && caracter!="N")
     {
         Console.SetCursorPosition(1, 10);
         batalla.EscribirMensajePorLetras("el caracter ingresado es incorrecto, intentelo de nuevo", TimeSpan.FromMilliseconds(30));
-        
+        Console.SetCursorPosition(70, 8);
+        Console.WriteLine("             ");
+        Console.SetCursorPosition(70, 8);
     }
 } while (caracter!="y" && caracter!="Y" && caracter!="n" && caracter!="N");
 
@@ -209,6 +210,7 @@ if (persojanesJson.Existe(archivo2) && persojanesJson.Existe(archivo))
         batalla.EscribirMensajePorLetras("Apodo: "+ principal.Apodo, TimeSpan.FromMilliseconds(30));
         batalla.EscribirMensajePorLetras("Nivel: "+ principal.Nivel, TimeSpan.FromMilliseconds(30));
         batalla.EscribirMensajePorLetras("Orden: "+ principal.Tipo, TimeSpan.FromMilliseconds(30));
+        batalla.EscribirMensajePorLetras("Salud: "+ principal.Salud, TimeSpan.FromMilliseconds(30));
         Console.ReadKey();
         Console.ForegroundColor = ConsoleColor.Red;
         Console.SetCursorPosition(30, 4);
@@ -222,6 +224,8 @@ if (persojanesJson.Existe(archivo2) && persojanesJson.Existe(archivo))
         batalla.EscribirMensajePorLetras("Nivel: "+ secundario.Nivel, TimeSpan.FromMilliseconds(30));
         Console.SetCursorPosition(30, 8);
         batalla.EscribirMensajePorLetras("Orden: "+ secundario.Tipo, TimeSpan.FromMilliseconds(30));
+        Console.SetCursorPosition(30, 9);
+        batalla.EscribirMensajePorLetras("Salud: "+ secundario.Salud, TimeSpan.FromMilliseconds(30));
         Console.ReadKey();
         int r=1;
         do

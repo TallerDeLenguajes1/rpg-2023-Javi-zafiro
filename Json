@@ -154,5 +154,18 @@
     "Nivel": 1,
     "Armadura": 8,
     "Salud": 100
+  },
+  {
+    "Tipo": "Nominador de lo otro",
+    "Nombre": "\u00D6m\u00FCr",
+    "Apodo": "bigladybug884",
+    "FechaNac": "1983-11-04T10:21:39.676Z",
+    "Edad": 39,
+    "Destreza": 5,
+    "Fuerza": 9,
+    "Velocidad": 6,
+    "Nivel": 1,
+    "Armadura": 6,
+    "Salud": 100
   }
 ]
