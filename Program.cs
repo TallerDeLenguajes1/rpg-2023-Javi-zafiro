@@ -7,6 +7,7 @@ using System.Text.Json;
 string? archivo = "Json";
 string? archivo2 = "Contrincantes";
 string? caracter="a";
+bool bandera=true;
 Personaje principal=null;
 
 Console.Clear();
@@ -42,6 +43,10 @@ batalla.EscribirMensajePorLetras("Vence a los 10 campeones, lleva la gloria a tu
 Console.ForegroundColor = ConsoleColor.Cyan;
 Console.SetCursorPosition(45, 7);
 batalla.EscribirMensajePorLetras("Vamos Muchach@, di las palabras", TimeSpan.FromMilliseconds(30));
+Console.SetCursorPosition(46, 10);
+Console.ForegroundColor = ConsoleColor.Red;
+batalla.EscribirMensajePorLetras("Presione enter para continuar", TimeSpan.FromMilliseconds(30));
+Console.ForegroundColor = ConsoleColor.White;
 Console.ReadKey();
 Console.Clear();
 Console.ForegroundColor = ConsoleColor.Red;
@@ -53,6 +58,10 @@ batalla.EscribirMensajePorLetras("FUERZA ANTES QUE DEBILIDAD", TimeSpan.FromMill
 Thread.Sleep(50);
 Console.SetCursorPosition(51, 7);
 batalla.EscribirMensajePorLetras("VIDA ANTES QUE MUERTE", TimeSpan.FromMilliseconds(30));
+Console.SetCursorPosition(46, 10);
+Console.ForegroundColor = ConsoleColor.Red;
+batalla.EscribirMensajePorLetras("Presione enter para continuar", TimeSpan.FromMilliseconds(30));
+Console.ForegroundColor = ConsoleColor.White;
 Console.ReadKey();
 Console.Clear();
 Console.ForegroundColor = ConsoleColor.Red;
@@ -186,50 +195,108 @@ if (persojanesJson.Existe(archivo2) && persojanesJson.Existe(archivo))
         listaContrincantes.Remove(secundario);
         
         Console.Clear();
+        Console.SetCursorPosition(30, 1);
+        Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("Comencemos el "+i+"° combate");
-        Console.WriteLine("El primer combatiente: ");
-        Console.WriteLine("Nombre: "+ principal.Nombre);
-        Console.WriteLine("Apodo: "+ principal.Apodo);
-        Console.WriteLine("Nivel: "+ principal.Nivel);
-        Console.WriteLine("Tipo: "+ principal.Tipo);
+        Console.ForegroundColor = ConsoleColor.White;
+        batalla.EscribirMensajePorLetras("Tu eres el primer combatiente, tu contrincante es el segundo", TimeSpan.FromMilliseconds(30));
+        batalla.EscribirMensajePorLetras("Vamos a presentar a los combatientes", TimeSpan.FromMilliseconds(30));
         Console.ReadKey();
-        Console.WriteLine("El segundo combatiente: ");
-        Console.WriteLine("Nombre: "+ secundario.Nombre);
-        Console.WriteLine("Apodo: "+ secundario.Apodo);
-        Console.WriteLine("Nivel: "+ secundario.Nivel);
-        Console.WriteLine("Tipo: "+ secundario.Tipo);
+        Console.ForegroundColor = ConsoleColor.Green;
+        batalla.EscribirMensajePorLetras("El primer combatiente: ", TimeSpan.FromMilliseconds(30));
+        Console.ForegroundColor = ConsoleColor.White;
+        batalla.EscribirMensajePorLetras("Nombre: "+ principal.Nombre, TimeSpan.FromMilliseconds(30));
+        batalla.EscribirMensajePorLetras("Apodo: "+ principal.Apodo, TimeSpan.FromMilliseconds(30));
+        batalla.EscribirMensajePorLetras("Nivel: "+ principal.Nivel, TimeSpan.FromMilliseconds(30));
+        batalla.EscribirMensajePorLetras("Orden: "+ principal.Tipo, TimeSpan.FromMilliseconds(30));
         Console.ReadKey();
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.SetCursorPosition(30, 4);
+        batalla.EscribirMensajePorLetras("El segundo combatiente: ", TimeSpan.FromMilliseconds(30));
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.SetCursorPosition(30, 5);
+        batalla.EscribirMensajePorLetras("Nombre: "+ secundario.Nombre, TimeSpan.FromMilliseconds(30));
+        Console.SetCursorPosition(30, 6);
+        batalla.EscribirMensajePorLetras("Apodo: "+ secundario.Apodo, TimeSpan.FromMilliseconds(30));
+        Console.SetCursorPosition(30, 7);
+        batalla.EscribirMensajePorLetras("Nivel: "+ secundario.Nivel, TimeSpan.FromMilliseconds(30));
+        Console.SetCursorPosition(30, 8);
+        batalla.EscribirMensajePorLetras("Orden: "+ secundario.Tipo, TimeSpan.FromMilliseconds(30));
+        Console.ReadKey();
+        int r=1;
         do
         {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.SetCursorPosition(30, 1);
+            Console.WriteLine("=================round "+r+"=================");
+            Console.ForegroundColor = ConsoleColor.White;
             if (cambio)
             {
                 daño=batalla.combate(principal, secundario);
+                Console.SetCursorPosition(30, 2);
                 Console.WriteLine("daño causado por el primer combatiente: "+daño);
                 secundario.Salud-=daño;
                 cambio=false;
             }else
             {
                 daño=batalla.combate(secundario, principal);
+                Console.SetCursorPosition(30, 2);
                 Console.WriteLine("daño causado por el segundo combatiente: "+daño);
                 principal.Salud-=daño;
                 cambio=true;
             }
-            
-            Console.WriteLine("salud del primer combatiente: "+principal.Salud);
-            Console.WriteLine("salud del segundo combatiente: "+secundario.Salud);
-            Console.WriteLine("==========fin de round==========");
+            Console.ForegroundColor = ConsoleColor.Green;
             if (principal.Salud<=0)
             {
+                Console.SetCursorPosition(30, 3);
+                Console.WriteLine("salud del primer combatiente: 0");
+            }else
+            {
+                Console.SetCursorPosition(30, 3);
+                Console.WriteLine("salud del primer combatiente: "+principal.Salud);
+            }
+            Console.ForegroundColor = ConsoleColor.Red;
+            if (secundario.Salud<=0)
+            {
+                Console.SetCursorPosition(30, 4);
+                Console.WriteLine("salud del segundo combatiente: 0");
+            }else
+            {
+                Console.SetCursorPosition(30, 4);
+                Console.WriteLine("salud del segundo combatiente: "+secundario.Salud);
+            }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.SetCursorPosition(30, 5);
+            Console.WriteLine("===============fin de round==============");
+            
+            if (principal.Salud<=0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("FUISTE VENCIDO");
+                bandera=false;
             }
             if (secundario.Salud<=0)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("VENCISTE A TU CONTRINCATE");
             }
-            Console.WriteLine("...enter para continuar...");
-            Console.ReadLine();
-        } while (principal.Salud>0 && secundario.Salud>0 && listaContrincantes.Count>0); 
+            Console.SetCursorPosition(30, 6);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("...presione enter...");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.ReadKey();
+            r++;
+        } while (principal.Salud>0 && secundario.Salud>0); 
         i++;
+        if (i%2==0)
+        {
+            cambio=false;
+        }else
+        {
+            cambio=true;
+        }
+        Console.Clear();
         if (principal.Salud>0)
         {
             principal.Salud=salud;
@@ -298,8 +365,41 @@ if (persojanesJson.Existe(archivo2) && persojanesJson.Existe(archivo))
                 Console.Clear();
             }
         }
-    } while (principal.Salud>0 && listaContrincantes.Count>0);
+    } while (principal.Salud>0 && i<=10);
+    if (bandera)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(" _____          _   _          _       _               _                _   _ ");
+        Console.WriteLine("|  ___|   ___  | | (_)   ___  (_)   __| |   __ _    __| |   ___   ___  | | | |");
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.WriteLine("| |_     / _ \\ | | | |  / __| | |  / _` |  / _` |  / _` |  / _ \\ / __| | | | |");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("|  _|   |  __/ | | | | | (__  | | | (_| | | (_| | | (_| | |  __/ \\__ \\ |_| |_|");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("|_|      \\___| |_| |_|  \\___| |_|  \\__,_|  \\__,_|  \\__,_|  \\___| |___/ (_) (_)");
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        batalla.EscribirMensajePorLetras("Eres el campeon de Urithiru!! Tu Fuerza y tu Nombre seran recordados por siglos!!", TimeSpan.FromMilliseconds(30));
+    }else
+    {
+        Console.ForegroundColor = ConsoleColor.DarkBlue;
+        batalla.EscribirMensajePorLetras("Tristemente, tu historia llego hasta aqui. Lo intentaste con tu valor y esfuerzo, pero esta vez no fue suficiente", TimeSpan.FromMilliseconds(30));
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(" _____   _             ____           _         _                      ");
+        Console.WriteLine("|  ___| (_)  _ __     |  _ \\    ___  | |       | |  _   _    ___    __ _    ___");
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.WriteLine("| |_    | | | '_ \\    | | | |  / _ \\ | |    _  | | | | | |  / _ \\  / _` |  / _ \\ ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("|  _|   | | | | | |   | |_| | |  __/ | |   | |_| | | |_| | |  __/ | (_| | | (_) |");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("|_|     |_| |_| |_|   |____/   \\___| |_|    \\___/   \\__,_|  \\___|  \\__, |  \\___/");
+        Console.WriteLine("                                                                      |___/ ");         
+   
+
+ 
+  
+                 
+    }
 }else
 {
-    Console.Write("el archivo no existe");
+    Console.WriteLine("el archivo no existe");
 }
