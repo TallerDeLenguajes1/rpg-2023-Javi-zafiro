@@ -4,7 +4,7 @@ using usarApi;
 using System.IO;
 using System.Net;
 using System.Text.Json;
-string? archivo = "Json";
+string? archivo = "Personajes";
 string? archivo2 = "Contrincantes";
 string? caracter="a";
 bool bandera=true;

@@ -1,0 +1,41 @@
+[
+  {
+    "Tipo": "Vigilante de la verdad",
+    "Nombre": "Joel",
+    "Apodo": "browncat873",
+    "FechaNac": "1968-07-09T01:26:54.024Z",
+    "Edad": 55,
+    "Destreza": 3,
+    "Fuerza": 3,
+    "Velocidad": 7,
+    "Nivel": 1,
+    "Armadura": 8,
+    "Salud": 100
+  },
+  {
+    "Tipo": "Custodio de piedra",
+    "Nombre": "Ute",
+    "Apodo": "tinywolf304",
+    "FechaNac": "1987-10-01T07:36:19.999Z",
+    "Edad": 35,
+    "Destreza": 4,
+    "Fuerza": 8,
+    "Velocidad": 5,
+    "Nivel": 1,
+    "Armadura": 10,
+    "Salud": 100
+  },
+  {
+    "Tipo": "Danzante del filo",
+    "Nombre": "Sana",
+    "Apodo": "ticklishmeercat390",
+    "FechaNac": "1976-11-03T03:24:32.021Z",
+    "Edad": 46,
+    "Destreza": 5,
+    "Fuerza": 4,
+    "Velocidad": 8,
+    "Nivel": 1,
+    "Armadura": 5,
+    "Salud": 100
+  }
+]
